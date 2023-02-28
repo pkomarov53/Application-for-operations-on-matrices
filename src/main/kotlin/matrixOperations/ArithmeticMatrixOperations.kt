@@ -38,7 +38,6 @@ class ArithmeticMatrixOperations {
             return result
         }
 
-        // Функция для умножения матриц
         fun multiplyMatrices(matrix1: Array<Array<Double>>, matrix2: Array<Array<Double>>): Array<Array<Double>> {
             val result = Array(matrix1.size) { Array(matrix2[0].size) { 0.0 } }
             for (i in matrix1.indices) {

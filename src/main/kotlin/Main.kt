@@ -1,6 +1,6 @@
 import matrixOperations.ArithmeticMatrixOperations
 import matrixOperations.ComplicatedMatrixOperations
-import kotlin.math.roundToInt
+
 import kotlin.random.Random
 
 fun printMatrix(matrix: Array<Array<Double>>) {
@@ -15,34 +15,34 @@ fun printMatrix(matrix: Array<Array<Double>>) {
 
 fun main() {
     val firstMatrix = arrayOf(
-        arrayOf(Random.nextDouble(1.0, 10.0).roundToInt().toDouble(),
-            Random.nextDouble(1.0, 10.0).roundToInt().toDouble(),
-            Random.nextDouble(1.0, 10.0).roundToInt().toDouble()),
-        arrayOf(Random.nextDouble(1.0, 10.0).roundToInt().toDouble(),
-            Random.nextDouble(1.0, 10.0).roundToInt().toDouble(),
-            Random.nextDouble(1.0, 10.0).roundToInt().toDouble()),
-        arrayOf(Random.nextDouble(1.0, 10.0).roundToInt().toDouble(),
-            Random.nextDouble(1.0, 10.0).roundToInt().toDouble(),
-            Random.nextDouble(1.0, 10.0).roundToInt().toDouble())
+        arrayOf(Random.nextInt(1, 10).toDouble(),
+            Random.nextInt(1, 10).toDouble(),
+            Random.nextInt(1, 10).toDouble()),
+        arrayOf(Random.nextInt(1, 10).toDouble(),
+            Random.nextInt(1, 10).toDouble(),
+            Random.nextInt(1, 10).toDouble()),
+        arrayOf(Random.nextInt(1, 10).toDouble(),
+            Random.nextInt(1, 10).toDouble(),
+            Random.nextInt(1, 10).toDouble())
     )
 
     val secondMatrix = arrayOf(
-        arrayOf(Random.nextDouble(1.0, 10.0).roundToInt().toDouble(),
-            Random.nextDouble(1.0, 10.0).roundToInt().toDouble(),
-            Random.nextDouble(1.0, 10.0).roundToInt().toDouble()),
-        arrayOf(Random.nextDouble(1.0, 10.0).roundToInt().toDouble(),
-            Random.nextDouble(1.0, 10.0).roundToInt().toDouble(),
-            Random.nextDouble(1.0, 10.0).roundToInt().toDouble()),
-        arrayOf(Random.nextDouble(1.0, 10.0).roundToInt().toDouble(),
-            Random.nextDouble(1.0, 10.0).roundToInt().toDouble(),
-            Random.nextDouble(1.0, 10.0).roundToInt().toDouble())
+        arrayOf(Random.nextInt(1, 10).toDouble(),
+            Random.nextInt(1, 10).toDouble(),
+            Random.nextInt(1, 10).toDouble()),
+        arrayOf(Random.nextInt(1, 10).toDouble(),
+            Random.nextInt(1, 10).toDouble(),
+            Random.nextInt(1, 10).toDouble()),
+        arrayOf(Random.nextInt(1, 10).toDouble(),
+            Random.nextInt(1, 10).toDouble(),
+            Random.nextInt(1, 10).toDouble())
     )
 
     println("\nМатрица №1: ")
-        printMatrix(firstMatrix)
+    printMatrix(firstMatrix)
 
     println("Матрица №2: ")
-        printMatrix(secondMatrix)
+    printMatrix(secondMatrix)
 
     println("Сумма матриц:")
     for (row in ArithmeticMatrixOperations.addMatrices(firstMatrix, secondMatrix)) {
@@ -76,7 +76,7 @@ fun main() {
         println(row.joinToString(" "))
     }
 
-    print("\nПроверка на правильность обратной матрицы -> " +
+    println("\nПроверка на правильность обратной матрицы -> " +
            "${ComplicatedMatrixOperations.checkInverseMatrix(firstMatrix, 
-               ComplicatedMatrixOperations.inverseMatrix(firstMatrix))}\n")
+               ComplicatedMatrixOperations.inverseMatrix(firstMatrix))}")
 }
